@@ -42,6 +42,12 @@ Para instalar todas as dependências, você pode usar:
 pip install geopandas numpy fiona python-tsp requests
 ```
 
+Também pode instalar todas as dependências listadas no arquivo `requirements.txt` com o seguinte comando:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Como Executar
 
 1. **Executar o script `main-knn-random.py`**:
