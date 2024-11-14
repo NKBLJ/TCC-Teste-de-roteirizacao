@@ -5,22 +5,26 @@ Este repositório contém scripts para testes e comparação de desempenho de di
 ## Arquivos
 
 - **main-knn-random.py**: Este script testa os seguintes algoritmos de roteirização:
-  - **API**: Algoritmo de roteirização via uma API.
-  - **KNN**: Algoritmo de roteirização baseado no vizinho mais próximo (K-Nearest Neighbors).
   - **Random**: Algoritmo de roteirização aleatória para comparação básica.
+  - **KNN**: Algoritmo de roteirização baseado no vizinho mais próximo (K-Nearest Neighbors).
+  - **API**: Algoritmo de roteirização via uma API.
+
 
 - **main-pdin-heur.py**: Este script testa os seguintes algoritmos:
-  - **Lin-Kernighan**: Algoritmo heurístico eficiente para problemas de roteirização.
-  - **Programação Dinâmica**: Algoritmo baseado em otimização por programação dinâmica.
   - **API**: Algoritmo de roteirização via uma API.
+  - **Programação Dinâmica**: Algoritmo baseado em otimização por programação dinâmica.
   - **Busca Local**: Algoritmo heurístico de busca local para refinar soluções de roteirização.
+  - **Lin-Kernighan**: Algoritmo heurístico eficiente para problemas de roteirização.
 
 ## Estrutura dos Dados Gerados
 
-- O arquivo `dados.csv` é gerado ao executar os scripts e contém as distâncias calculadas para cada algoritmo testado. A estrutura do arquivo é a seguinte:
-  - **Algoritmo**: Nome do algoritmo utilizado.
-  - **Distância Calculada**: Distância total da rota gerada pelo algoritmo.
-  - **Outros Dados**: Informações adicionais relacionadas ao desempenho de cada algoritmo, caso aplicável.
+Ao executar os scripts, é gerado um arquivo `dados.csv` que contém as distâncias calculadas para cada algoritmo testado. O formato dos dados no arquivo é o seguinte:
+
+- **main-knn-random.py**:
+  - Cada linha do arquivo representa uma lista de distâncias na ordem: `{Random}, {KNN}, {API}`
+
+- **main-pdin-heur.py**:
+  - Cada linha do arquivo representa uma lista de distâncias na ordem: `{API}, {Prog. Dinâmica}, {Busca Local}, {Lin-Kernighan}`
 
 ## Pré-requisitos
 
@@ -36,3 +40,20 @@ Para instalar todas as dependências, você pode usar:
 
 ```bash
 pip install geopandas numpy fiona python-tsp requests
+```
+
+## Como Executar
+
+1. **Executar o script `main-knn-random.py`**:
+   - Esse script testa os algoritmos API, KNN e Random.
+   - Para executá-lo, use o seguinte comando:
+     ```bash
+     python main-knn-random.py
+     ```
+
+2. **Executar o script `main-pdin-heur.py`**:
+   - Esse script testa os algoritmos Lin-Kernighan, Programação Dinâmica, API e Busca Local.
+   - Para executá-lo, use o seguinte comando:
+     ```bash
+     python main-pdin-heur.py
+     ```
